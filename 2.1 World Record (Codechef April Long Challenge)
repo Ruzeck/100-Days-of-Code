@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  int t;
+  cin>>t;
+  while(t--)
+  {
+      double k1,k2,k3,v;
+      cin>>k1>>k2>>k3>>v;
+      double s=0,x=0, y=0;
+      s=k1*k2*k3*v;
+      x=100/s;
+      
+      y=round(x*100)/100;
+      //cout<<y;
+      
+      if(y<9.58)
+      {
+          cout<<"YES"<<endl;
+          
+      }
+      else
+      {
+          cout<<"NO"<<endl;
+          
+      }
+
+  }
+}
