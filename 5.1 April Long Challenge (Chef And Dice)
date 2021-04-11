@@ -32,10 +32,10 @@ int main()
         {
             sum=sum+55;
         }
-        cout<<sum;
+        cout<<sum<<endl;
         }
         else{
-            int res;
+            int res=0;
             if(rem==1)
             {
                 res=20;
@@ -48,7 +48,7 @@ int main()
             {
                 res=51;
             }
-            cout<<res;
+            cout<<res<<endl;
         }
     }
     return 0;
