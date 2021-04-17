@@ -1,0 +1,33 @@
+class Solution
+{
+    public:
+    //Function to find the maximum number of meetings that can
+    //be performed in a meeting room.
+    int maxMeetings(int start[], int end[], int n)
+    {
+        // Your code here
+        int i, j;
+
+
+
+    // The first activity always gets selected
+    i = 0;
+   
+
+    // Consider rest of the activities
+    for (j = 1; j < n; j++)
+    {
+      // If this activity has start time greater than or
+      // equal to the finish time of previously selected
+      // activity, then select it
+      if (s[j] >= f[i])
+      {
+         
+          i = j;
+          count++
+      }
+    }
+    return count;
+        
+    }
+};
