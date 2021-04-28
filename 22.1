@@ -1,0 +1,45 @@
+int longestMountain(int arr[], int n)
+{
+    int ans = 0;
+
+    for (int i = 0; i < n; ++i)
+    {
+        for (int j = i + 2; j < n; ++j)
+        {
+            bool f = 1, isMountain = 1;
+
+            for (int k = i; k < j; ++k)
+            {
+                if(arr[k] < arr[k+1])
+                {
+                    if(!f)
+                    {
+                        isMountain = 0;
+                        break;
+                    }
+                }
+                else if(arr[k] > arr[k+1])
+                {
+                    if(k == i && f)
+                    {
+                        isMountain = 0;
+                        break;
+                    }
+                    f = 0;
+                }
+                else
+                {
+                    isMountain = 0;
+                    break;
+                }
+            }
+
+            if(isMountain && f == 0)
+            {
+                ans = max(ans, j - i + 1);
+            }
+        }
+    }
+
+    return ans;
+}
