@@ -1,0 +1,37 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        unsigned int a=0;
+        int count=0;
+        string str;
+        cin>>str;
+        string test;
+        cin>>test;
+        for(int i=0;i<test.length();i++)
+        {
+            for(int j=0;j<str.length();j++)
+            {
+               if(test[i]==str[j])
+               {
+                 a=i-j;
+                   count=count+a;
+                   j=i;
+               }
+            }
+              
+        }
+        cout<<count<<endl;
+    }
+    return 0;
+}
