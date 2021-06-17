@@ -35,3 +35,31 @@ int Solution::maxSubArray(const vector<int> &A) {
     }
     return maxsofar;
 }
+
+3. Reversing a Link List upto K node.
+
+class Solution
+{
+    public:
+    struct node *reverse (struct node *head, int k)
+    { 
+        // Complete this method
+        node* prev=NULL;
+        node* current=head;
+        node* nextptr;
+        int count=0;
+        while(current!=NULL && count<k)
+        {
+            nextptr=current->next;
+            current->next=prev;
+            prev=current;
+            current=nextptr;
+            count++;
+            
+        }
+        if(nextptr!=NULL)
+        head->next=reverse(nextptr,k);
+        
+        return prev;
+    }
+};
