@@ -1,3 +1,5 @@
+1. Minimum number of steps required to reach the points.
+
 int Solution::coverPoints(vector<int> &A, vector<int> &B) {
     int n=A.size();
     int steps=0;
@@ -8,4 +10,28 @@ int Solution::coverPoints(vector<int> &A, vector<int> &B) {
         steps+=max(abs(A[i]-A[i+1]),abs(B[i]-B[i+1]));
     }
     return steps;
+}
+
+2. Maximum sum of contagious array.
+
+int Solution::maxSubArray(const vector<int> &A) {
+    int max_end=0;
+    int maxsofar=-99999; // point to be noted
+    
+
+    for(int i=0;i<A.size();i++)
+    {
+        if(A.size()==1)
+        maxsofar=A[0];
+        max_end=max_end+A[i];
+        if(maxsofar<max_end)
+        {
+            maxsofar=max_end;
+        }
+        if(max_end<0)
+        {
+            max_end=0;
+        }
+    }
+    return maxsofar;
 }
