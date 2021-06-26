@@ -1,0 +1,33 @@
+Reverse a string using Stack.
+
+V=#include<bits/stdc++.h>
+using namespace std;
+void stackreverse(string a)
+ {
+     stack<string> st;
+     for(int i=0;i<a.length();i++)
+     {
+         string word=" ";
+         while(a[i]!=' ' && i<a.length()){
+             word=word+a[i];
+         }
+         st.push(word);
+     }
+     while(!st.empty())
+     {
+         cout<<st.top()<<" ";
+         st.pop();
+     }
+     cout<<endl;
+
+ }
+ int main()
+ {
+     string s="Hey, how are you?";
+    stackreverse(s);
+     
+
+ }
+
+
+ 
