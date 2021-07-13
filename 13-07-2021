@@ -1,0 +1,35 @@
+Level Order Traversal of Binary Tree
+
+class Solution
+{
+    public:
+    //Function to return the level order traversal of a tree.
+    vector<int> levelOrder(Node* node)
+    {
+      //Your code here
+      if(node==NULL)
+      {
+          return NULL;
+      }
+      queue<Node*> q;
+      q.push(node);
+      q.push(NULL);
+      while(!q.empty())
+      {
+          Node* front= q.front();
+          q.pop();
+          if(front!=NULL)
+          {
+              cout<<front->data<<" ";
+              if(front->left)
+              q.push(front->left);
+              if(front->right)
+              q.push(front->right);
+          }
+          else if(!q.empty())
+          q.push(NULL);
+      }
+      
+      
+    }
+};
