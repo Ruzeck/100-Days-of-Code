@@ -1,0 +1,30 @@
+Closest K elements using heaps.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int arr[5]={5,9,7,4,2};
+    int k,x;
+    cin>>k;
+    cin>>x;
+    priority_queue<pair<int,int>> p;
+    for(int i=0;i<5;i++)
+    {
+        p.push({abs(x-arr[i]),arr[i]});
+        if(p.size()>k)
+        {
+            p.pop();
+        }
+    }
+    while(p.size()>0)
+    {
+        cout<<p.top().second<<endl;
+        p.pop();
+    }
+    
+    return 0;
+    
+
+    
+}
