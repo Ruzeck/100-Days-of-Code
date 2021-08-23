@@ -1,0 +1,29 @@
+Connect Ropes to minimise thw cost.
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int arr[]={1,2,3,4,5};
+    int cost=0;
+    
+    priority_queue<int,vector<int>,greater<int>> min;
+    for(int i=0;i<5;i++)
+    {
+        min.push(arr[i]);
+    }
+    
+    while(min.size()>=2)
+    {
+        int first=min.top();
+        min.pop();
+        int second=min.top();
+        min.pop();
+        cost=cost+first+second;
+        min.push(first+second);
+        
+    }
+    cout<<cost;
+    
+}
